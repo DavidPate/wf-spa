@@ -1,0 +1,660 @@
+<html>
+	<head>
+		<title>WF SPA Markup</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="jquery.tablesorter.min.js"></script> 
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="tablestyle.css">
+		<link rel="stylesheet" href="app.css">
+
+	</head>
+	<body>
+		<div class="left-rail col-lg-1 col-md-1">
+			<div class="btn-group-vertical" role="group" aria-label="...">
+			  	<button type="button" class="btn btn-default btn-view-individual"><i class="icon-user"></i></button>
+			  	<button type="button" class="btn btn-default btn-view-group"><i class="icon-group"></i></button>
+			  	<button type="button" class="btn btn-default btn-view-graphs"><i class="fa fa-pie-chart"></i></button>
+			</div>
+		</div>	
+		<div class="right-panel col-lg-11 col-md-11">
+			<div class="header">
+				<div class="row">
+				  <div class="col-lg-8 col-md-8">
+				    <h1>Wells Fargo SPA POC - Task Notifications</h1>
+				  </div><!-- /.col-lg-8 -->
+				  <div class="col-lg-4 col-md-4 filter">
+				    <div class="input-group">
+				      <input type="text" id="filterInput" class="form-control" placeholder="Filter for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default glyphicon glyphicon-filter" type="button"></button>
+				      </span>
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-4 -->
+				</div><!-- /.row -->
+			</div>
+			<div class="content col-lg-11 col-md-11">
+				<div class="data">
+					<div class="subheader">	
+						<h2>My Queue</h2>
+					</div>
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-default btn-status-overdue">Overdue (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-at-risk">At Risk (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-on-track">On Track (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-complete">Complete (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-all">All (<span></span>)</button>
+					</div>
+					<table id="data-table" class="tablesorter data-table">
+						<thead>
+							<tr class="table-header">
+								<th>Status</th>
+								<th>Request #</th>
+								<th>Request Type</th>
+								<th>Task</th>
+								<th>Received</th>
+								<th>Due</th>
+								<th>Account</th>
+								<th class="currency">Amount</th>
+								<th>Recipient</th>
+								<th>Recipient Location</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="status-overdue">
+								<td>Overdue</td>	
+								<td>87912839</td>	
+								<td>Retail ACH</td>	
+								<td>Approve as Credit Team Lead</td>	
+								<td>4/5/2015</td>	
+								<td>5/5/2015</td>	
+								<td>829381023</td>	
+								<td class="currency">114.50 EUR</td>	
+								<td>Sancho, Ignatius</td>	
+								<td>USA</td>	
+							</tr>
+							<tr class="status-at-risk">
+								<td>At-Risk</td>	
+								<td>91283989</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>1/6/2015</td>	
+								<td>2/6/2015</td>	
+								<td>381923472</td>	
+								<td class="currency">273.23 USD</td>	
+								<td>Selby, William</td>	
+								<td>Germany</td>	
+							</tr>
+							<tr class="status-on-track">
+								<td>On-Track</td>	
+								<td>928312832</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>6/5/2015</td>	
+								<td>7/5/2015</td>	
+								<td>381473823</td>	
+								<td class="currency">821.34 PHP</td>	
+								<td>Teplov, Grigory</td>	
+								<td>USA</td>	
+							</tr>
+							<tr class="status-on-track">
+								<td>On-Track</td>	
+								<td>283187823</td>	
+								<td>Check Dispursement</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>8/2/2015</td>	
+								<td>9/2/2015</td>	
+								<td>827312342</td>	
+								<td class="currency">2,371.12 USD</td>	
+								<td>Kraft, Nikolaus</td>	
+								<td>USA</td>	
+							</tr>
+							<tr class="status-complete">
+								<td>Complete</td>	
+								<td>287318723</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>6/5/2015</td>	
+								<td>7/5/2015</td>	
+								<td>381923472</td>	
+								<td class="currency">273.23 USD</td>	
+								<td>Clifton, John</td>	
+								<td>USA</td>	
+							</tr>
+							<tr class="status-complete">
+								<td>Complete</td>	
+								<td>982398182</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>8/2/2015</td>	
+								<td>9/2/2015</td>	
+								<td>381473823</td>	
+								<td class="currency">821.34 PHP</td>	
+								<td>Yost, Michel</td>	
+								<td>Germany</td>	
+							</tr>
+
+						</tbody>
+					</table>
+					<nav>
+					  <ul class="pagination">
+					    <li>
+					      <a href="#" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					      </a>
+					    </li>
+					    <li><a href="#">1</a></li>
+					    <li><a href="#">2</a></li>
+					    <li><a href="#">3</a></li>
+					    <li><a href="#">4</a></li>
+					    <li><a href="#">5</a></li>
+					    <li>
+					      <a href="#" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					      </a>
+					    </li>
+					  </ul>
+					</nav>
+				</div>
+			</div>
+			<div class="right-rail col-lg-1 col-md-1">
+				<button type="button" class="btn btn-default new-request" data-toggle="modal" data-target="#newRequestModal"><i class="fa fa-plus-circle"></i><br / >New<br /> Request</button>
+			</div>	
+		</div> <!-- end right-panel	-->
+
+		<!-- Modal -->
+		<div class="modal fade" id="newRequestModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Create New Request</h4>
+					</div>
+					<div class="modal-body1 modal-body">
+					  <p>What kind of new Service Request would you like to start?</p>
+
+					  <div class="input-group">
+				      <input type="text" id="sr-search" class="form-control" placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+				      </span>
+				    </div><!-- /input-group -->
+				      <ul>
+				      	<li><a href="" class="step1">Foreign Wire Transfer</a></li>
+				      	<li><a href="" class="step1">Another service request type</a></li>
+				      	<li><a href="" class="step1">Another service request type</a></li>
+				      </ul>
+					  <a href="" class="">See all Service Request types</a>
+
+					</div>
+					<div class="modal-body2 modal-body" style="display: none;">
+					  <p>Next, let's find the client this Foreign Wire Transfer is for</p>
+
+					  <div class="input-group">
+				      <input type="text" id="sr-search" class="form-control" placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+				      </span>
+				    </div><!-- /input-group -->
+				      <ul>
+				      	<li><a href="" class="step2">Client Name</a></li>
+				      	<li><a href="" class="step2">Client Name</a></li>
+				      	<li><a href="" class="step2">Client Name</a></li>
+				      </ul>
+					  <a href="" class="">See all client matches</a>
+
+					</div>
+					<div class="modal-body3 modal-body" style="display: none;">
+					  <p>Last, please select the account from which this request should be processed.</p>
+
+					  <div class="input-group">
+				      <input type="text" id="sr-search" class="form-control" placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+				      </span>
+				    </div><!-- /input-group -->
+				      <ul>
+				      	<li><a href="" class="step3">Account Info</a></li>
+				      	<li><a href="" class="step3">Account Info</a></li>
+				      	<li><a href="" class="step3">Account Info</a></li>
+				      </ul>
+					  <a href="" class="">See household</a>
+
+					</div>
+					<div class="modal-body4" style="display: none;">
+					  <iframe src="http://www.path2usa.com/samples/sample-form-I134-frontPage.jpg" width="620px" height="500px" scrolling="auto"></iframe> 
+
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+<!-- ======================= -->
+<div class="clear"></div>
+<div class="break"></div>
+<!-- ======================= -->
+
+		<div class="left-rail col-lg-1 col-md-1">
+			<div class="btn-group-vertical" role="group" aria-label="...">
+			  	<button type="button" class="btn btn-default btn-view-individual"><i class="icon-user"></i></button>
+			  	<button type="button" class="btn btn-default btn-view-group"><i class="icon-group"></i></button>
+			  	<button type="button" class="btn btn-default btn-view-graphs"><i class="fa fa-pie-chart"></i></button>
+			</div>
+		</div>	
+		<div class="right-panel col-lg-11 col-md-11">
+			<div class="header">
+				<div class="row">
+				  <div class="col-lg-8 col-md-8">
+				    <h1>Wells Fargo SPA POC - Task Preview</h1>
+				  </div><!-- /.col-lg-8 -->
+				  <div class="col-lg-4 col-md-4 filter">
+				    <div class="input-group">
+				      <input type="text" id="filterInput" class="form-control" placeholder="Filter for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default glyphicon glyphicon-filter" type="button"></button>
+				      </span>
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-4 -->
+				</div><!-- /.row -->
+			</div>
+			<div class="content col-lg-5 col-md-5">
+				<div class="data">
+					<div class="subheader">	
+						<button type="button" class="btn btn-default btn-expand"><i class="glyphicon glyphicon-circle-arrow-right"></i><br />Expand</button>
+						<h2>My Queue</h2>
+					</div>
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-default btn-status-overdue">Overdue (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-at-risk">At Risk (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-on-track">On Track (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-complete">Complete (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-all">All (<span></span>)</button>
+					</div>
+					<table id="data-table-skinny" class="tablesorter data-table">
+						<thead>
+							<tr class="table-header">
+								<th>Status</th>
+								<th>Request Type</th>
+								<th>Task</th>
+								<th>Account</th>
+								<th class="currency">Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="status-overdue">
+								<td>Overdue</td>	
+								<td>Retail ACH</td>	
+								<td>Approve as Credit Team Lead</td>	
+								<td>829381023</td>	
+								<td class="currency">114.50 EUR</td>
+							</tr>
+							<tr class="status-at-risk">
+								<td>At-Risk</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381923472</td>	
+								<td class="currency">273.23 USD</td>	
+							</tr>
+							<tr class="status-on-track">
+								<td>On-Track</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381473823</td>	
+								<td class="currency">821.34 PHP</td>
+							</tr>
+							<tr class="status-on-track">
+								<td>On-Track</td>	
+								<td>Check Dispursement</td>	
+								<td>Approve as Margin Specialist</td>
+								<td>827312342</td>	
+								<td class="currency">2,371.12 USD</td>	
+							</tr>
+							<tr class="status-complete">
+								<td>Complete</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381923472</td>	
+								<td class="currency">273.23 USD</td>	
+							</tr>
+							<tr class="status-complete">
+								<td>Complete</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381473823</td>	
+								<td class="currency">821.34 PHP</td>	
+							</tr>
+
+						</tbody>
+					</table>
+					<nav>
+					  <ul class="pagination">
+					    <li>
+					      <a href="#" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					      </a>
+					    </li>
+					    <li><a href="#">1</a></li>
+					    <li><a href="#">2</a></li>
+					    <li><a href="#">3</a></li>
+					    <li><a href="#">4</a></li>
+					    <li><a href="#">5</a></li>
+					    <li>
+					      <a href="#" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					      </a>
+					    </li>
+					  </ul>
+					</nav>
+				</div>
+			</div>
+			<div class="col-lg-7 col-md-7 data">
+				<div class="task-preview">
+					<button type="button" class="btn btn-default btn-close-task"><i class="glyphicon glyphicon-remove-sign"></i><br />Close Task</button>	
+					<h2>Approve as Margin Specialist</h2>
+					<p>Wire Funds</p>
+					<div class="col-lg-8 col-md-8">
+						<table>
+							<tr>
+								<td>Request #</td>
+								<td>87912839</td>
+								<td>Request Type</td>
+								<td>Retail ACH</td>
+							</tr>
+							<tr>
+								<td>Transaction Type</td>
+								<td>Foriegn</td>
+								<td>Task</td>
+								<td>Approve as Credit Team Lead</td>
+							</tr>
+							<tr>
+								<td>Received</td>
+								<td>4/5/2015</td>
+								<td>Due</td>
+								<td>5/5/2015</td>
+							</tr>
+							<tr>
+								<td>Sender Name</td>
+								<td>Doe, John</td>
+								<td>Sender Account</td>
+								<td>829381023</td>
+							</tr>
+							<tr>
+								<td>Sender Account Type</td>
+								<td>Cash</td>
+								<td>Amount</td>
+								<td>114.50 EUR</td>
+							</tr>
+							<tr>
+								<td>Recipient</td>
+								<td>Sancho, Ignatius</td>
+								<td>Recipient Location</td>
+								<td>USA</td>
+							</tr>
+						</table>
+			
+						<button type="button" class="btn btn-default btn-run-task">Run Task</button>
+					</div>	
+					<div class="col-lg-4 col-md-4 comments">
+						<textarea rows="4" cols="35">This is my new comment ...</textarea>
+						<button type="button" class="btn btn-default">Add Comment</button>
+						<div class="previous-comments">
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+							<div class="comment">
+								<div class="comment-header">Older Comment - [Date]</div>
+								<div class="comment-content">Pithy and insightful comment that gets to the heart of the matter.</div>
+							</div>	
+						</div>	
+					</div>	<!-- end comments -->
+				</div>
+			</div>	
+		</div> <!-- end right-panel	-->
+
+<!-- ======================= -->
+<div class="clear"></div>
+<div class="break"></div>
+<!-- ======================= -->
+
+		<div class="left-rail col-lg-1 col-md-1">
+			<div class="btn-group-vertical" role="group" aria-label="...">
+			  	<button type="button" class="btn btn-default btn-view-individual"><i class="icon-user"></i></button>
+			  	<button type="button" class="btn btn-default btn-view-group"><i class="icon-group"></i></button>
+			  	<button type="button" class="btn btn-default btn-view-graphs"><i class="fa fa-pie-chart"></i></button>
+			</div>
+		</div>	
+		<div class="right-panel col-lg-11 col-md-11">
+			<div class="header">
+				<div class="row">
+				  <div class="col-lg-8 col-md-8">
+				    <h1>Wells Fargo SPA POC - Run Task</h1>
+				  </div><!-- /.col-lg-8 -->
+				  <div class="col-lg-4 col-md-4 filter">
+				    <div class="input-group">
+				      <input type="text" id="filterInput" class="form-control" placeholder="Filter for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default glyphicon glyphicon-filter" type="button"></button>
+				      </span>
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-4 -->
+				</div><!-- /.row -->
+			</div>
+			<div class="content col-lg-5 col-md-5">
+				<div class="data">
+					<div class="subheader">	
+						<button type="button" class="btn btn-default btn-expand"><i class="glyphicon glyphicon-circle-arrow-right"></i><br />Expand</button>
+						<h2>My Queue</h2>
+					</div>
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-default btn-status-overdue">Overdue (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-at-risk">At Risk (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-on-track">On Track (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-complete">Complete (<span></span>)</button>
+					  <button type="button" class="btn btn-default btn-status-all">All (<span></span>)</button>
+					</div>
+					<table id="data-table-skinny2" class="tablesorter data-table">
+						<thead>
+							<tr class="table-header">
+								<th>Status</th>
+								<th>Request Type</th>
+								<th>Task</th>
+								<th>Account</th>
+								<th class="currency">Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="status-overdue">
+								<td>Overdue</td>	
+								<td>Retail ACH</td>	
+								<td>Approve as Credit Team Lead</td>	
+								<td>829381023</td>	
+								<td class="currency">114.50 EUR</td>
+							</tr>
+							<tr class="status-at-risk">
+								<td>At-Risk</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381923472</td>	
+								<td class="currency">273.23 USD</td>	
+							</tr>
+							<tr class="status-on-track">
+								<td>On-Track</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381473823</td>	
+								<td class="currency">821.34 PHP</td>
+							</tr>
+							<tr class="status-on-track">
+								<td>On-Track</td>	
+								<td>Check Dispursement</td>	
+								<td>Approve as Margin Specialist</td>
+								<td>827312342</td>	
+								<td class="currency">2,371.12 USD</td>	
+							</tr>
+							<tr class="status-complete">
+								<td>Complete</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381923472</td>	
+								<td class="currency">273.23 USD</td>	
+							</tr>
+							<tr class="status-complete">
+								<td>Complete</td>	
+								<td>Wire Funds</td>	
+								<td>Approve as Margin Specialist</td>	
+								<td>381473823</td>	
+								<td class="currency">821.34 PHP</td>	
+							</tr>
+
+						</tbody>
+					</table>
+					<nav>
+					  <ul class="pagination">
+					    <li>
+					      <a href="#" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					      </a>
+					    </li>
+					    <li><a href="#">1</a></li>
+					    <li><a href="#">2</a></li>
+					    <li><a href="#">3</a></li>
+					    <li><a href="#">4</a></li>
+					    <li><a href="#">5</a></li>
+					    <li>
+					      <a href="#" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					      </a>
+					    </li>
+					  </ul>
+					</nav>
+				</div>
+			</div>
+			<div class="col-lg-7 col-md-7 data">
+				<div class="run-task">
+					<button type="button" class="btn btn-default btn-close-task"><i class="glyphicon glyphicon-remove-sign"></i><br />Close Task</button>	
+					<button type="button" class="btn btn-default btn-activity-history"><i class="glyphicon glyphicon-remove-sign"></i><br />Activity History</button>	
+					<h2>Approve as Margin Specialist</h2>
+					<p>Wire Funds</p>
+					<div>
+						<table>
+							<tr>
+								<td>Request #</td>
+								<td>87912839</td>
+								<td>Request Type</td>
+								<td>Retail ACH</td>
+							</tr>
+							<tr>
+								<td>Transaction Type</td>
+								<td>Foriegn</td>
+								<td>Task</td>
+								<td>Approve as Credit Team Lead</td>
+							</tr>
+							<tr>
+								<td>Received</td>
+								<td>4/5/2015</td>
+								<td>Due</td>
+								<td>5/5/2015</td>
+							</tr>
+							<tr>
+								<td>Sender Name</td>
+								<td>Doe, John</td>
+								<td>Sender Account</td>
+								<td>829381023</td>
+							</tr>
+							<tr>
+								<td>Sender Account Type</td>
+								<td>Cash</td>
+								<td>Amount</td>
+								<td>114.50 EUR</td>
+							</tr>
+							<tr>
+								<td>Recipient</td>
+								<td>Sancho, Ignatius</td>
+								<td>Recipient Location</td>
+								<td>USA</td>
+							</tr>
+						</table>
+					</div>	
+					<hr />
+					<div>
+						<div class="col-lg-5 col-md-5">
+							<label for="actions">Action</label>
+							<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							    Actions
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							    <li><a href="#">Action</a></li>
+							    <li><a href="#">Another action</a></li>
+							    <li><a href="#">Something else here</a></li>
+							    <li><a href="#">Separated link</a></li>
+							  </ul>
+							</div>	
+							<label for="actions">Reason</label>
+							<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							    Reason
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							    <li><a href="#">Action</a></li>
+							    <li><a href="#">Another action</a></li>
+							    <li><a href="#">Something else here</a></li>
+							    <li><a href="#">Separated link</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="col-lg-7 col-md-7">	
+							<label for="run-comments">Comments</label>
+							<textarea cols="55" rows="10"></textarea>
+							<button type="button" class="btn btn-default btn-submit-run-task">Submit</button>
+						</div>	
+					</div>	
+				</div>
+			</div>	
+		</div> <!-- end right-panel	-->
+
+		<script type="text/javascript" src="app.js"></script> 
+
+	</body>
+</html>
